@@ -4,7 +4,7 @@
 
 ### Enviroment
 
-- Baixe ou Faça um Fork da aplicação do git Hub : [Netbiis Front-End Test](https://github.com/Ozory/netbiis-front-react-test.git)
+- Baixe ou Faça um Fork da aplicação do git Hub : [Netbiis Front-End Test](https://github.com/netbiis/reactjs-test)
 - Rode localmente a aplicação
 
 ### Lógica, Javascript e React
