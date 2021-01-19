@@ -30,3 +30,6 @@
         Mude para article o componente que acredita ser o mais indicado
 - Ao ir concluindo cada solicitação dessa lista, por favor gere um commit e realize o push.
 - Prazo para entrega: Caso esteja livre inicio imediato, o prazo é 24hrs. Caso esteja trabalhando, é 48hrs.
+- Quando concluir, responda o email que recebeu com o link desse repositório, adicionando o link do SEU repositório com a aplicação concluida.
+
+### BOA SORTE
