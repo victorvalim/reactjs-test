@@ -17,3 +17,6 @@ button {
   display:${((props) => (props.done ? 'none' : 'inline'))};
 }
 `;
+export const DeleteButton = styled.button`
+
+`;

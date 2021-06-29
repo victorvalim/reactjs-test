@@ -13,7 +13,10 @@ export default function reducer(state, action) {
 
   const updateTodo = (todo) => state;
 
-  const deleteTodo = (todo) => state;
+  const deleteTodo = (id) => {
+    const newState = state.filter((item) => (item.id !== id));
+    return [...newState];
+  };
 
   const doneTodo = (id, description) => {
     const todoItem = { id, description, done: true };
@@ -31,6 +34,8 @@ export default function reducer(state, action) {
       return deleteTodo(action.payload);
     case 'done':
       return doneTodo(action.payloadID, action.payloadDescription);
+    case 'delete':
+      return deleteTodo(action.payloadID);
     default:
       return null;
   }
