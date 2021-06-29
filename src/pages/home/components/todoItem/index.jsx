@@ -1,8 +1,14 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useContext } from 'react';
 import { Item } from './todoItemStyled';
+import { TodoContext } from '../../../../contexts/todo.context';
 
 export default function Todo({ id, description, done }) {
+  const todoContext = useContext(TodoContext);
+  function doneHandler(e) {
+    e.preventDefault();
+    todoContext.dispatch({ type: 'done', payloadID: id, payloadDescription: description });
+  }
   return (
     <div>
       <div>
@@ -19,7 +25,7 @@ export default function Todo({ id, description, done }) {
         </div>
       </div>
       <div>
-        <button type="button">Ok</button>
+        <button onClick={(e) => doneHandler(e, id, description)} type="button">Ok</button>
       </div>
     </div>
   );

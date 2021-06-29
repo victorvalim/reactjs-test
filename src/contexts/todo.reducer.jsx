@@ -1,3 +1,5 @@
+/* eslint-disable object-shorthand */
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-unused-vars */
 export default function reducer(state, action) {
   function randomNumber() {
@@ -13,6 +15,13 @@ export default function reducer(state, action) {
 
   const deleteTodo = (todo) => state;
 
+  const doneTodo = (id, description) => {
+    const todoItem = { id, description, done: true };
+    const oldItem = { id, description, done: false };
+    const newState = state.map((item) => (item.id === oldItem.id ? todoItem : item));
+    return [...newState];
+  };
+
   switch (action.type) {
     case 'add':
       return addTodo(action.payload);
@@ -20,6 +29,8 @@ export default function reducer(state, action) {
       return updateTodo(action.payload);
     case 'remove':
       return deleteTodo(action.payload);
+    case 'done':
+      return doneTodo(action.payloadID, action.payloadDescription);
     default:
       return null;
   }
