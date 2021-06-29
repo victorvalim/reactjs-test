@@ -6,7 +6,7 @@ export default function Todo({ id, description, done }) {
   return (
     <div>
       <div>
-        <Item>
+        <Item id={id}>
           {id}
           {' '}
           -

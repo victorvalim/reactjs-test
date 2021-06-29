@@ -1,6 +1,8 @@
 import React, { useState, useContext } from 'react';
 import { TodoContext } from '../../../../contexts/todo.context';
-import { Input, Label, Span } from './todoHeaderStyled';
+import {
+  Input, Label, Span,
+} from './todoHeaderStyled';
 
 export default function TodoHeader() {
   const todoContext = useContext(TodoContext);
