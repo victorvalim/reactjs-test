@@ -20,7 +20,6 @@ input:valid, input:focus{
 export const Input = styled.input`
 
 font-size:14px;
-border:none;
 -webkit-appearance:none;
 -ms-appearance:none;
 -moz-apprearance:none;

@@ -11,6 +11,7 @@ export default function TodoHeader() {
   const handleAddTodo = (e) => {
     e.preventDefault();
     todoContext.dispatch({ type: 'add', payload: todo });
+    setTodo(() => '');
   };
 
   return (
@@ -18,11 +19,9 @@ export default function TodoHeader() {
       <p>Lista de Atividades</p>
       <div>
         <Label>
-          <Input required type="text" onChange={(e) => { setTodo(e.target.value); }} />
+          <Input required type="text" value={todo} onChange={(e) => { setTodo(e.target.value); }} />
           <Span>Senha</Span>
         </Label>
-        {/* <input type="text" onChange={(e) =>
-            { setTodo(e.target.value); }} placeholder="digite para filtrar" /> */}
         <button type="button" onClick={(e) => handleAddTodo(e)}>Adicionar</button>
       </div>
     </div>
