@@ -11,3 +11,9 @@ span {
   color:${((props) => (props.done ? 'green' : 'red'))};
 }
 `;
+
+export const ButtonContainer = styled.div`
+button {
+  display:${((props) => (props.done ? 'none' : 'inline'))};
+}
+`;

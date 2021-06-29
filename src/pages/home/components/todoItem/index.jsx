@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useContext } from 'react';
-import { DoneContainer, Item } from './todoItemStyled';
+import { ButtonContainer, DoneContainer, Item } from './todoItemStyled';
 import { TodoContext } from '../../../../contexts/todo.context';
 
 export default function Todo({ id, description, done }) {
@@ -24,9 +24,9 @@ export default function Todo({ id, description, done }) {
           <span>{done === true ? 'Sim' : 'Não'}</span>
         </DoneContainer>
       </div>
-      <div>
+      <ButtonContainer done={done}>
         <button onClick={(e) => doneHandler(e, id, description)} type="button">Ok</button>
-      </div>
+      </ButtonContainer>
     </div>
   );
 }
