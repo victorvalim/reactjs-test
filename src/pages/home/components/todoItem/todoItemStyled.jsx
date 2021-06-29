@@ -20,3 +20,6 @@ button {
 export const DeleteButton = styled.button`
 
 `;
+export const Article = styled.article`
+
+`;

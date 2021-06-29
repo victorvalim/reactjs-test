@@ -10,8 +10,8 @@ export default function reducer(state, action) {
   }
 
   const addTodo = (todo) => {
-    const sessionstorage = JSON.parse(localStorage.getItem('todos'));
     const todoItem = { id: randomNumber(), description: todo, done: false };
+    const sessionstorage = JSON.parse(localStorage.getItem('todos'));
     if (sessionstorage) localStorage.setItem('todos', JSON.stringify([...sessionstorage, todoItem]));
     else if (localStorage.setItem('todos', JSON.stringify([todoItem])));
     return [...state, todoItem];
