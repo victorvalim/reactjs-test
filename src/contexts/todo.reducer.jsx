@@ -1,7 +1,11 @@
 /* eslint-disable no-unused-vars */
 export default function reducer(state, action) {
+  function randomNumber() {
+    const id = new Date().getTime();
+    return (Number(id) + 1);
+  }
   const addTodo = (todo) => {
-    const todoItem = { id: state.length + 1, description: todo, done: false };
+    const todoItem = { id: randomNumber(), description: todo, done: false };
     return [...state, todoItem];
   };
 
