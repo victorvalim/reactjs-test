@@ -1,13 +1,19 @@
 /* eslint-disable object-shorthand */
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-unused-vars */
+import repository from '../data/repository';
+
 export default function reducer(state, action) {
   function randomNumber() {
     const id = new Date().getTime();
     return (Number(id) + 1);
   }
+
   const addTodo = (todo) => {
+    const sessionstorage = JSON.parse(localStorage.getItem('todos'));
     const todoItem = { id: randomNumber(), description: todo, done: false };
+    if (sessionstorage) localStorage.setItem('todos', JSON.stringify([...sessionstorage, todoItem]));
+    else if (localStorage.setItem('todos', JSON.stringify([todoItem])));
     return [...state, todoItem];
   };
 
@@ -15,6 +21,7 @@ export default function reducer(state, action) {
 
   const deleteTodo = (id) => {
     const newState = state.filter((item) => (item.id !== id));
+    localStorage.setItem('todos', JSON.stringify([...newState]));
     return [...newState];
   };
 
@@ -22,6 +29,7 @@ export default function reducer(state, action) {
     const todoItem = { id, description, done: true };
     const oldItem = { id, description, done: false };
     const newState = state.map((item) => (item.id === oldItem.id ? todoItem : item));
+    localStorage.setItem('todos', JSON.stringify([...newState]));
     return [...newState];
   };
 

@@ -22,7 +22,7 @@ export default function TodoHeader() {
           <Input required type="text" value={todo} onChange={(e) => { setTodo(e.target.value); }} />
           <Span>Senha</Span>
         </Label>
-        <button type="button" onClick={(e) => handleAddTodo(e)}>Adicionar</button>
+        <button type="button" disabled={todo === ''} onClick={(e) => handleAddTodo(e)}>Adicionar</button>
       </div>
     </div>
   );
